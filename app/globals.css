@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  color: #f7f2e8;
+  background: #070707;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(181, 142, 89, 0.16), transparent 28rem),
+    linear-gradient(180deg, #090909 0%, #050505 58%, #0d0c0a 100%);
+  color: #f7f2e8;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #f7f2e8;
+  color: #070707;
+}
+
+.map-paper {
+  background-image:
+    linear-gradient(rgba(247, 242, 232, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 242, 232, 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.route-line {
+  position: absolute;
+  inset: 23% 14% auto 11%;
+  height: 45%;
+  border-top: 1px solid rgba(247, 242, 232, 0.28);
+  border-right: 1px solid rgba(247, 242, 232, 0.22);
+  border-radius: 48% 42% 38% 34%;
+  transform: rotate(-8deg);
+}
+
+.glass-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+    #121212;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.phone-shell {
+  background:
+    linear-gradient(145deg, #5a6274, #0e1016 28%, #020203 68%, #606b83),
+    #08090d;
+  box-shadow:
+    0 36px 120px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.13),
+    inset 0 0 0 7px rgba(20, 22, 29, 0.9);
+}
+
+.phone-screen {
+  background:
+    radial-gradient(circle at 25% 0%, rgba(189, 145, 89, 0.24), transparent 14rem),
+    linear-gradient(180deg, #14110e 0%, #070707 52%, #050505 100%);
+}
+
+.grain {
+  position: relative;
+}
+
+.grain::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.06;
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+}
+
+.fade-in {
+  animation: fade-in 700ms ease both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
